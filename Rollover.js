@@ -7,20 +7,16 @@ const tandc = document.getElementById("tc")
 var name_error = document.getElementById('name_error');
 var email_error = document.getElementById('email_error');
  var password_error = document.getElementById('password_error');
-
 form.addEventListener('submit',(e)=>{
-
-    let nameValue = uname.value
+ let nameValue = uname.value
     let emailValue = email.value
     let phonenumbervalue = phonenumber.value
     e.preventDefault()
-
-    if(nameValue && emailValue && phonenumbervalue) {
+ if(nameValue && emailValue && phonenumbervalue) {
         console.log("if case called")
         validate();
         window.location.href = "index.html"
     }
-
 })
 function validate(){
     console.log('-->> validate fun called')
@@ -28,8 +24,7 @@ function validate(){
     let emailValue = email.value
     let phonenumbervalue = phonenumber.value
     console.log('-->> console', nameValue, emailValue, phonenumbervalue)
-   
-   if(nameValue===''){
+    if(nameValue===''){
     setError(uname, 'user name cannot be empty')
    }
    else if(nameValue.length<3){
@@ -38,7 +33,6 @@ function validate(){
    else{
     setSuccesss(uname)
    }
-
  if(emailValue===''){
         setError(email,'Eamil cannot be empty')
     }  
@@ -59,8 +53,7 @@ function validate(){
     }
     }
      if(!tandc.checked){
-         
-        setError(tc,'click on agree terms checkbox')        
+           setError(tc,'click on agree terms checkbox')        
     }
     else{
         setSuccesss(tc)
@@ -82,7 +75,3 @@ function emailCheck(input){
     let valid = emailReg.test(input)       
     return valid;
 }
-
-
-
-
